@@ -41,24 +41,12 @@ HotelApp_Parte1/
 
 ---
 
-## Cómo ejecutar
 
 ### Requisitos
 - Java 21 (o superior)
 - Maven
 
-### Desde la terminal
-```bash
-cd "c:\Users\A6Alumno27\Desktop\INTERFACES\ProyectoHotel\HotelApp_Parte1"
-mvn clean compile
-mvn javafx:run
-```
 
-### Desde VS Code
-- Abre la carpeta como proyecto Maven.
-- Usa la configuración de lanzamiento (`.vscode/launch.json`) para ejecutar `Main.java`.
-
----
 
 ## Datos de ejemplo (`reservas.xml`)
 
@@ -69,13 +57,9 @@ El XML contiene información de **Hotel Sol** (Madrid) con:
 
 ---
 
-## Integrantes (Tema 9)
+## Integrantes
 - Nacho
 - Raul
 - Iñigo
 
 ---
-
-## Notas
-- El archivo `reservas.xml` solo se **lee**, nunca se modifica desde la aplicación.
-- La funcionalidad original de búsqueda de habitaciones se conserva en la pestaña "Habitaciones".
