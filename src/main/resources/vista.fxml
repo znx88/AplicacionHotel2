@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_LEFT" prefHeight="700.0" prefWidth="900.0" spacing="10.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelController">
+
+   <children>
+      <Label text="HOTEL SOL - SISTEMA DE RESERVAS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="lblInfo" text="Cargando datos..." wrapText="true" />
+
+      <TabPane fx:id="tabPane" prefWidth="860.0" prefHeight="580.0">
+         <tabs>
+            <Tab text="Habitaciones" fx:id="tabHabitaciones" closable="false">
+               <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <ListView fx:id="listaHabitaciones" prefHeight="300.0" prefWidth="560.0" />
+
+                        <Label text="Buscar habitación por número:" />
+
+                        <HBox spacing="8.0">
+                           <children>
+                              <TextField fx:id="txtNumero" prefHeight="25.0" prefWidth="100.0" promptText="Ej: 205" />
+                              <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" text="BUSCAR" />
+                           </children>
+                        </HBox>
+
+                        <Label fx:id="lblResultado" text="Introduce un número y pulsa Buscar." wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Informes de reservas" fx:id="tabInformes" closable="false">
+               <content>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="Informe de reservas para el gerente">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+
+
+                        <HBox spacing="12.0">
+                           <children>
+                              <VBox spacing="6.0">
+                                 <children>
+                                    <Label text="Estado:" />
+                                    <ComboBox fx:id="cmbEstadoFiltro" prefWidth="140.0" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0">
+                                 <children>
+                                    <Label text="Mes:" />
+                                    <ComboBox fx:id="cmbMesFiltro" prefWidth="140.0" />
+                                 </children>
+                              </VBox>
+
+                              <Button fx:id="btnAplicarFiltro" mnemonicParsing="false" onAction="#aplicarFiltro" text="APLICAR FILTRO" />
+                           </children>
+                        </HBox>
+
+                        <TableView fx:id="tablaReservas" prefHeight="260.0" prefWidth="840.0">
+                           <columns>
+                              <TableColumn fx:id="colCodigo" text="Código" prefWidth="80.0" />
+                              <TableColumn fx:id="colEstado" text="Estado" prefWidth="100.0" />
+                              <TableColumn fx:id="colCliente" text="Cliente" prefWidth="200.0" />
+                              <TableColumn fx:id="colHabitacion" text="Habitación" prefWidth="100.0" />
+                              <TableColumn fx:id="colEntrada" text="Entrada" prefWidth="100.0" />
+                              <TableColumn fx:id="colSalida" text="Salida" prefWidth="100.0" />
+                              <TableColumn fx:id="colPersonas" text="Personas" prefWidth="80.0" />
+                           </columns>
+                        </TableView>
+
+                        <HBox spacing="20.0">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label fx:id="lblTotalReservas" text="Total reservas: 0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTotalConfirmadas" text="Confirmadas: 0" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label fx:id="lblTotalFinalizadas" text="Finalizadas: 0" />
+                                    <Label fx:id="lblTotalCanceladas" text="Canceladas: 0" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label fx:id="lblTotalPendientes" text="Pendientes: 0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>
